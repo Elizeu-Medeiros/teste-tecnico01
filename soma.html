@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/cropped-icone-Escribo-252px-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Elizeu Medeiros">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Escribo · Soma de Números Divisíves por 3 e 5</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("img/e=mc2.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/sign-in/signin.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" charset="UTF-8"
+        href="https://translate.googleapis.com/translate_static/css/translateelement.css">
+    <link type="text/css" rel="stylesheet" href="css/sweetalert2.min.css">
+</head>
+
+<body class="text-center bg">
+    <form id="form-calcular" class="form-signin">
+        <img class="mb-4" src="img/Marca-Escribo-Branca.png" alt="Escribo" height="72">
+        <h1 class="h3 mb-12 font-weight-normal" style="color: aliceblue;">Cálculo de Números Divisíves por 3 e 5</h1>
+        <label for="inputNumero" class="sr-only">Número</label>
+        <input type="number" id="inputNumero" name="inputNumero" class="form-control" placeholder="Digite o número"
+            required autofocus  min="1" step="1" onkeypress="return event.charCode >= 48">
+        <br />
+        <button class="btn btn-lg btn-primary btn-block" id="calcular" type="button">Calcular</button>
+        <p class="mt-5 mb-12 text-muted" style="color: aliceblue;">&copy; 2021 Escribo - Inovação para o Aprendizado |
+            <a href="https://www.linkedin.com/in/elizeu-medeiros-b2a0b348/">Elizeu Medeiros.</a>
+        </p>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/sweetalert2.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('#form-calcular').keypress(function (e) {
+                if ((e.keyCode == 10) || (e.keyCode == 13)) {
+                    e.preventDefault();
+                }
+            });
+
+            $('#calcular').click(function () {
+                var numero = $("#inputNumero").val();
+                var soma = 0;
+
+                for (var i = 0; i < numero; i++) {
+                    if (i % 5 == 0) {
+                        soma += i;
+                    }
+
+                    if (i % 3 == 0) {
+                        soma += i;
+                    }
+                }
+
+                swal("Resultado ", "<h1>" + soma + "</h1>", "success");
+            })
+        })
+    </script>
+</body>
+
+</html>
