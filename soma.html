@@ -3,18 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="img/cropped-icone-Escribo-252px-32x32.png">
+    <link rel="icon" type="image/png" href="img/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Elizeu Medeiros">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Escribo · Soma de Números Divisíves por 3 e 5</title>
-
+    <title>M&A Gráfica · Soma de Números Divisíves por 3 ou 5</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 
     <style>
         .bd-placeholder-img {
@@ -54,14 +52,14 @@
 
 <body class="text-center bg">
     <form id="form-calcular" class="form-signin">
-        <img class="mb-4" src="img/Marca-Escribo-Branca.png" alt="Escribo" height="72">
+        <img class="mb-4" src="img/" alt="Escribo" height="72">
         <h1 class="h3 mb-12 font-weight-normal" style="color: aliceblue;">Cálculo de Números Divisíves por 3 e 5</h1>
         <label for="inputNumero" class="sr-only">Número</label>
         <input type="number" id="inputNumero" name="inputNumero" class="form-control" placeholder="Digite o número"
             required autofocus  min="1" step="1" onkeypress="return event.charCode >= 48">
         <br />
         <button class="btn btn-lg btn-primary btn-block" id="calcular" type="button">Calcular</button>
-        <p class="mt-5 mb-12 text-muted" style="color: aliceblue;">&copy; 2021 Escribo - Inovação para o Aprendizado |
+        <p class="mt-5 mb-12 text-muted" style="color: aliceblue;">&copy; 2021 <a href="https://meagrafica.com.br">M&A Gráfica - Criação e Desevolvimento</a> |
             <a href="https://www.linkedin.com/in/elizeu-medeiros-b2a0b348/">Elizeu Medeiros.</a>
         </p>
     </form>
@@ -85,11 +83,7 @@
                 var soma = 0;
 
                 for (var i = 0; i < numero; i++) {
-                    if (i % 5 == 0) {
-                        soma += i;
-                    }
-
-                    if (i % 3 == 0) {
+                    if ((i % 3 == 0) || (i % 5 == 0)) {
                         soma += i;
                     }
                 }
